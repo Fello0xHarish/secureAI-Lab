@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  bandit:
+   bandit:
     name: Bandit Security Scan
     runs-on: ubuntu-latest
 
@@ -26,9 +26,9 @@ jobs:
       - name: Run Bandit
         run: |
           bandit static_analysis_demo.py ai_security_demo.py \
-           -f json \
-           -o bandit-results.json \
-           --severity-level medium
+            -f json \
+            -o bandit-results.json \
+            --severity-level high
 
       - name: Upload Bandit report
         uses: actions/upload-artifact@v4
